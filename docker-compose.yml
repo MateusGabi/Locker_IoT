@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - NODE_ENV=development
+  mongo:
+    image: mongo:3.6.5-jessie
+    ports:
+      - "27017:27017"
