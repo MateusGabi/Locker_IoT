@@ -1,18 +1,7 @@
-const express = require('express');
-var bodyParser = require('body-parser');
+const app = require('./app')
 
-var app = express();
+const PORT = process.env.PORT || 3000
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.post('/data',function(req,resp){
-    console.log(req.body);
-    resp.json(
-        {Sucesso : true}
-    );
-});
-
-app.listen(3000, function(){
-	console.log('Servidor on');
-});
+app.listen(PORT, function() {
+    console.log('🚀  Server available on port', PORT)
+})
